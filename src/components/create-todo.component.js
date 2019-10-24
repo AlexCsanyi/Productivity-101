@@ -98,7 +98,6 @@ export default class CreateTodo extends Component {
                 checked={this.state.todo_priority === "Low"}
                 onChange={this.onChangeTodoPriority}
               ></input>
-
               <label className="form-check-label">Low</label>
             </div>
             <div className="form=check form-check-inline">

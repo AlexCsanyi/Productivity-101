@@ -6,7 +6,7 @@ export default class EditTodo extends Component {
     super(props);
 
     this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+    this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
     this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
     this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -71,12 +71,13 @@ export default class EditTodo extends Component {
 
     axios
       .post(
-        "http://localhost:4000/todos/update" + this.props.match.params.id,
+        "http://localhost:4000/todos/update/" + this.props.match.params.id,
         obj
       )
       .then(response => {
         console.log(response.data);
       });
+
     this.props.history.push("/");
   }
 
@@ -158,7 +159,7 @@ export default class EditTodo extends Component {
             <div className="form-group">
               <input
                 type="submit"
-                value="Update Todo"
+                value="Update Task"
                 className="btn btn-primary"
               ></input>
             </div>
